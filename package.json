@@ -1,0 +1,20 @@
+{
+  "name": "shoppinglist",
+  "version": "1.0.0",
+  "description": "Full stack shopping list",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.7",
+    "nodemon": "^2.0.2",
+    "npm": "^6.13.6"
+  }
+}
