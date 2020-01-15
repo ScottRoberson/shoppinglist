@@ -9,23 +9,46 @@ const Item = require('../../models/Item');
 // @desc  Get All Items
 // @access Public
 router.get('/', (req, res) => {
-  Item.find()
+  Item.find({}, (err, items) => {
+      res.render('index', {
+        items: items
+      });
+    })
     .sort({
       date: -1
     })
-    .then(items => res.json(items))
 })
 
 // @route POST api/items
 // @desc  Create an item
 // @access Public
-router.post('/', (req, res) => {
+
+router.get('/add', (req, res) => {
+  // const newItem = new Item({
+  //   name: req.body.name
+  // });
+  res.render('addItem')
+  // newItem.save().then(item => res.json(item));
+});
+
+router.post('/', async (req, res) => {
   const newItem = new Item({
     name: req.body.name
   });
+  try {
 
-  newItem.save().then(item => res.json(item));
+    await newItem.save();
+    res.status(201).json(newItem);
+
+  } catch (err) {
+    res.status(400).json({
+      message: err.message
+    })
+  }
+  //newItem.save().then(item => res.json(item));
 });
+
+
 
 // @route PUT api/items/:id
 // @desc  Update an item
@@ -51,3 +74,17 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
+// app.get('/profileface', isLoggedIn, function (req, res) {
+//   // mongoose operations are asynchronous, so you need to wait 
+//   PracticeModel.find({}, function (err, data) {
+//     // note that data is an array of objects, not a single object!
+//     res.render('profileface.ejs', {
+//       user: req.user,
+//       practices: data
+//     });
+//   });
+// });

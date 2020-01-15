@@ -2,10 +2,17 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const path = require('path');
 
 const items = require('./routes/api/items');
 
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(express.json());
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs')
 
 //DB Config
 const db = process.env.DATABASE_URL;
