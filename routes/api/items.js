@@ -19,35 +19,31 @@ router.get('/', (req, res) => {
     })
 })
 
-// @route POST api/items
-// @desc  Create an item
+// @route GET api/items/add
+// @desc  Create an item 
 // @access Public
-
 router.get('/add', (req, res) => {
-  // const newItem = new Item({
-  //   name: req.body.name
-  // });
   res.render('addItem')
-  // newItem.save().then(item => res.json(item));
 });
 
-router.post('/', async (req, res) => {
+// @route POST api/items/add
+// @desc  Create an item 
+// @access Public
+router.post('/add', async (req, res) => {
   const newItem = new Item({
     name: req.body.name
   });
   try {
 
     await newItem.save();
-    res.status(201).json(newItem);
+    res.redirect('/api/items');
 
   } catch (err) {
     res.status(400).json({
       message: err.message
     })
   }
-  //newItem.save().then(item => res.json(item));
 });
-
 
 
 // @route PUT api/items/:id
