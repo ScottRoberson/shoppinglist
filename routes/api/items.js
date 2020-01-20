@@ -11,14 +11,27 @@ const Item = require('../../models/Item');
 router.get('/', (req, res) => {
   Item.find({}, (err, items) => {
       res.render('index', {
-        items: items
+        items: items,
       });
     })
     .sort({
       date: -1
     })
-})
 
+
+})
+// @route GET api/items/:id
+// @desc  Get singl Item
+// @access Public
+
+// router.get('/:id', (req, res) => {
+//   Item.findById((req.params.id), (err, items) => {
+
+//   })
+
+
+
+// })
 // @route GET api/items/add
 // @desc  Create an item 
 // @access Public
@@ -46,6 +59,21 @@ router.post('/add', async (req, res) => {
 });
 
 
+// @route DELETE api/items/:id
+// @desc  Delete an item
+// @access Public
+router.delete('/:id', async (req, res) => {
+  try {
+    const message = await Item.findById(req.params.id).then(item => item.remove()).then(() => res.json(message));
+
+  } catch (err) {
+    res.status(404).json({
+      success: false
+    })
+  }
+  console.log(req.params)
+});
+
 // @route PUT api/items/:id
 // @desc  Update an item
 // @access Public
@@ -53,20 +81,6 @@ router.put('/:id', (req, res) => {
   Item.findByIdAndUpdate(req.params.id, req.body).then(() => {
     Item.findOne(req.params.id)
   }).then(item => res.json(item));
-});
-
-
-// @route DELETE api/items/:id
-// @desc  Delete an item
-// @access Public
-router.delete('/:id', (req, res) => {
-  Item.findById(req.params.id)
-    .then(item => item.remove().then(() => res.json({
-      success: true
-    })))
-    .catch(err => res.status(404).json({
-      success: false
-    }))
 });
 
 module.exports = router;
