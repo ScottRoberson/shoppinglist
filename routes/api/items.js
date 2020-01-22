@@ -24,14 +24,7 @@ router.get('/', (req, res) => {
 // @desc  Get singl Item
 // @access Public
 
-// router.get('/:id', (req, res) => {
-//   Item.findById((req.params.id), (err, items) => {
 
-//   })
-
-
-
-// })
 // @route GET api/items/add
 // @desc  Create an item 
 // @access Public
@@ -84,17 +77,3 @@ router.put('/:id', (req, res) => {
 });
 
 module.exports = router;
-
-
-
-
-// app.get('/profileface', isLoggedIn, function (req, res) {
-//   // mongoose operations are asynchronous, so you need to wait 
-//   PracticeModel.find({}, function (err, data) {
-//     // note that data is an array of objects, not a single object!
-//     res.render('profileface.ejs', {
-//       user: req.user,
-//       practices: data
-//     });
-//   });
-// });

@@ -12,15 +12,11 @@
 
 <body>
   <h1>Hello World</h1>
-  <ul>
+  <ul class="collection-item">
     <% items.forEach(function (item) { %>
     <li class="item"> <%= item.name%> </li>
-    <button class="delete-item" data-id="<%= item.id%>" </button>Delete </button> <!-- <a href="#"
-      data-id="<%= item.id%>" id="delete-item">Delete</a> -->
-      <% }) %>
-  </ul>
-
-  <script src="/js/main.js"></script>
+    <button class="delete-item" data-id="<%= item.id%>" </button>Delete </button> <% }) %> </ul> <script
+      src="/js/main.js"></script>
 </body>
 
 </html>

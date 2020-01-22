@@ -1,12 +1,13 @@
 const deleteItem = document.querySelector('.delete-item');
 
-deleteItem.addEventListener('click', removeItem)
+const item = document.querySelector('.collection-item')
+
+item.addEventListener('click', removeItem);
 
 function removeItem(e) {
 
   const target = e.target;
   const id = target.getAttribute('data-id');
-
   console.log(id)
 
   fetch(`/api/items/${id}`, {
@@ -18,5 +19,6 @@ function removeItem(e) {
       if (res.ok) return res.json()
     })
     .then(data => console.log(data))
-  document.location.reload(true);
+  parent.window.location.reload(true);
+
 }
