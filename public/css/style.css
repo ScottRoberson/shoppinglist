@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  height: 60px;
+  background-color: #333;
+
+}
+
+.link-parent {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+}
+
+.header-link {
+  display: inline-block;
+  margin: 10px;
+  font-size: 1.25rem;
+}
+
+.header-link a {
+  color: #d0d0d0;
+  text-decoration: none;
+
+}
+
+.add-headline {}

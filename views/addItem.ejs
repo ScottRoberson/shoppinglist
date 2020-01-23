@@ -1,6 +1,11 @@
-<form action="/api/items/add" method="POST">
-  <label>Item</label>
-  <input type="text" name="name" id="">
-  <button type="submit" value="addItem">Add Item</button>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
 
-</form>
+  <%- include('./partials/header.ejs') %>
+
+  <h1 class="add-headline">Add Item</h1>
+  <form action="/api/items/add" method="POST">
+    <label>Item</label>
+    <input type="text" name="name" id="">
+    <button type="submit" value="addItem">Add Item</button>
+
+  </form>
