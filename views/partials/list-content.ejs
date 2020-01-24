@@ -1,0 +1,14 @@
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+
+  <div class="list-content">
+    <h1 class="headline">Shopping List <i class="fas fa-shopping-cart"></i></h1>
+
+    <ul class="collection-item">
+      <% items.forEach(function (item) { %>
+      <li class="item"> <%= item.name%> </li>
+      <button class="delete-item" data-id="<%= item.id%>" </button>Delete </button> <% }) %> </ul> <div
+        class="add-task-link">
+        <a href="" class="btn">Add Task</a>
+  </div>
+  </div>

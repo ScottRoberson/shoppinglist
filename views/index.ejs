@@ -7,21 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
     integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
   <title>Shopping List</title>
 </head>
 
 <body>
 
-  <main class="main-area">
-    <%- include('./partials/header.ejs') %>
-    <h1 class="headline">Shopping List <i class="fas fa-shopping-cart"></i></h1>
-    <div class="list-container">
-      <ul class="collection-item">
-        <% items.forEach(function (item) { %>
-        <li class="item"> <%= item.name%> </li>
-        <button class="delete-item" data-id="<%= item.id%>" </button>Delete </button> <% }) %> </ul> </div> </main>
-          <script src="/js/main.js"></script>
+  <%- include('./partials/header.ejs') %>
+  <main class="main">
+    <%- include('./partials/list-content.ejs') %>
+
+  </main>
+  <script src="/js/main.js"></script>
 </body>
 
 </html>
