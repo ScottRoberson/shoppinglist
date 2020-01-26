@@ -1,15 +1,1 @@
-###
-/ grocery list
-/additem
-/edit
-/delete
-
-***Todo list**
-[] Setup express
-[] connect mongoose to Mongodb
-[] Setup Routes
-[] Models
-[] Views(front end)
-
-
-
+This is a shopping list full stack application. That utilizes express, mongoDb for the back end with ejs used as the templating engine on the frontend. 

@@ -6,9 +6,9 @@
 
     <ul class="collection-item">
       <% items.forEach(function (item) { %>
-      <li class="item"> <%= item.name%> </li>
-      <button class="delete-item" data-id="<%= item.id%>" </button>Delete </button> <% }) %> </ul> <div
-        class="add-task-link">
-        <a href="" class="btn">Add Task</a>
+      <li class="item"> <%= item.name%>
+        <button class="delete-item" data-id="<%= item.id%>" </button>Delete </button> </li> <% }) %> </ul> <div
+          class="add-item-link">
+          <a href="/api/items/add" class="btn">Add Item</a>
   </div>
   </div>
